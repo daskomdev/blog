@@ -23,6 +23,39 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: " w-full h-full bg-white" }, [
+      _c("div", { staticClass: " absolute w-full h-auto flex flex-row" }, [
+        _c("div", { staticClass: "flex-1" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "mx-auto h-auto" }, [
+          _c("div", { staticClass: " mr-24 mt-32 w-auto h-auto" }, [
+            _c("div", { staticClass: "border rounded-full p-2" }, [
+              _c("input", {
+                staticClass:
+                  " py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:placeholder-transparent",
+                attrs: { id: "username", type: "text", placeholder: "Search" }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    " text-white font-bold p-2 rounded-full focus:outline-none"
+                },
+                [
+                  _c("img", {
+                    staticClass: " w-4 h-4",
+                    attrs: {
+                      src: __webpack_require__(/*! ../../../public/fonts/cari.png */ "./public/fonts/cari.png"),
+                      alt: "Cari"
+                    }
+                  })
+                ]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: " absolute w-full h-auto" }, [
         _c(
           "div",
@@ -226,6 +259,17 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ "./public/fonts/cari.png":
+/*!*******************************!*\
+  !*** ./public/fonts/cari.png ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/cari.png?3a4a703768bb3535970d96942888ad7b";
 
 /***/ }),
 
