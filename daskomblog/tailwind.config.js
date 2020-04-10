@@ -1,7 +1,8 @@
 module.exports = {
   theme: {
     fontFamily: {
-      'bebas': ['bebas']
+      'bebas': ['bebas'],
+      'quicksand' : ['quicksand']
     },
     extend: {
       borderRadius: {

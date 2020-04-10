@@ -4,6 +4,14 @@
   src: url('../fonts/bebas-regular.woff') format('woff'),
          url('../fonts/bebas-regular.woff2') format('woff2'),
          url('../fonts/bebas-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'quicksand';
+
+  src: url('../fonts/quicksand.woff') format('woff'),
+         url('../fonts/quicksand.woff2') format('woff2'),
+         url('../fonts/quicksand.ttf') format('truetype');
 }@charset "UTF-8";
 
 /*!
@@ -14354,6 +14362,10 @@ video {
   font-family: bebas;
 }
 
+.font-quicksand{
+  font-family: quicksand;
+}
+
 .font-hairline{
   font-weight: 100;
 }
@@ -27945,6 +27957,10 @@ html, body {
     font-family: bebas;
   }
 
+  .sm\:font-quicksand{
+    font-family: quicksand;
+  }
+
   .sm\:font-hairline{
     font-weight: 100;
   }
@@ -41528,6 +41544,10 @@ html, body {
 
   .md\:font-bebas{
     font-family: bebas;
+  }
+
+  .md\:font-quicksand{
+    font-family: quicksand;
   }
 
   .md\:font-hairline{
@@ -55115,6 +55135,10 @@ html, body {
     font-family: bebas;
   }
 
+  .lg\:font-quicksand{
+    font-family: quicksand;
+  }
+
   .lg\:font-hairline{
     font-weight: 100;
   }
@@ -68698,6 +68722,10 @@ html, body {
 
   .xl\:font-bebas{
     font-family: bebas;
+  }
+
+  .xl\:font-quicksand{
+    font-family: quicksand;
   }
 
   .xl\:font-hairline{

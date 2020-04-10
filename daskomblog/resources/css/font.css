@@ -4,3 +4,10 @@
          url('../fonts/bebas-regular.woff2') format('woff2'),
          url('../fonts/bebas-regular.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'quicksand';
+    src: url('../fonts/quicksand.woff') format('woff'),
+         url('../fonts/quicksand.woff2') format('woff2'),
+         url('../fonts/quicksand.ttf') format('truetype');
+}
