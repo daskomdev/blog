@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"24f22d7d430995bf8945"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"82a3ba225e908b5e7293","1":"83a033d7363913fdbe3f"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -11493,6 +11493,14 @@ var map = {
 	"./Home.vue": [
 		"./resources/js/Pages/Home.vue",
 		0
+	],
+	"./Login": [
+		"./resources/js/Pages/Login.vue",
+		1
+	],
+	"./Login.vue": [
+		"./resources/js/Pages/Login.vue",
+		1
 	]
 };
 function webpackAsyncContext(req) {

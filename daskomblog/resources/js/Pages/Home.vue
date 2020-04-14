@@ -1,6 +1,8 @@
 <template>
     <div class=" absolute w-full h-full bg-white">
         <div class="relative w-full m-0">
+
+            <!-- navbar -->
             <div class=" relative w-full h-auto">
                 <div id="bg_Navbar" class=" rounded-full h-16 text-black flex flex-row bg-daskom-abu-muda m-10 font-bebas text-lg">
                     <div id="logo_dsk" class=" w-1/2 h-full flex">
@@ -27,9 +29,14 @@
                         <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                             CONTACTS
                         </div>
+                        <div class=" w-auto h-auto my-auto mr-10">
+                            <a class="hover:no-underline hover:text-black" href="">LOGIN</a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- searchbar -->
             <div class=" relative w-full h-auto flex flex-row">
                 <div class="flex-1"></div>
                 <div class="mx-auto h-auto">
@@ -43,6 +50,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- socmed -->
             <div class=" relative flex flex-row w-full h-auto">
                 <div class="flex-1"></div>
                 <div class=" mx-auto mt-6">
@@ -63,6 +72,8 @@
                 </div>
             </div> 
         </div>
+
+        <!-- lower navbar -->
         <div class=" relative bg-black w-full h-64 mt-64 flex flex-col w-full">
             <div class=" -mt-8 mx-auto w-auto flex flex-col">
                 <a href="#"><img src="../../../public/images/panah.png" class=" h-16" alt=""></a>

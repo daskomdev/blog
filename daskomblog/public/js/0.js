@@ -242,7 +242,18 @@ var staticRenderFns = [
                     "\n                        CONTACTS\n                    "
                   )
                 ]
-              )
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: " w-auto h-auto my-auto mr-10" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "hover:no-underline hover:text-black",
+                    attrs: { href: "" }
+                  },
+                  [_vm._v("LOGIN")]
+                )
+              ])
             ]
           )
         ]
