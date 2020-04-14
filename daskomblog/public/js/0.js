@@ -249,7 +249,7 @@ var staticRenderFns = [
                   "a",
                   {
                     staticClass: "hover:no-underline hover:text-black",
-                    attrs: { href: "" }
+                    attrs: { href: "/login" }
                   },
                   [_vm._v("LOGIN")]
                 )

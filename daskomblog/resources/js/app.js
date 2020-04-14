@@ -1,15 +1,16 @@
 import { InertiaApp } from '@inertiajs/inertia-vue'
 import Vue from 'vue'
 
-Vue.use(InertiaApp)
+Vue.use(InertiaApp);
 
-const app = document.getElementById('app')
+const app = document.getElementById('app');
+const files = require.context('./', true, /\.vue$/i);
 
 new Vue({
   render: h => h(InertiaApp, {
     props: {
       initialPage: JSON.parse(app.dataset.page),
-      resolveComponent: name => import(`./Pages/${name}`).then(module => module.default),
+      resolveComponent: page => files(`./Pages/${page}.vue`).default,
     },
   }),
 }).$mount(app)
