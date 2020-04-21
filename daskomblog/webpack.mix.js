@@ -32,7 +32,7 @@ mix.babelConfig({
     plugins: ['@babel/plugin-syntax-dynamic-import'],
 })
 
-mix.browserSync('daskom.test');
+mix.browserSync('localhost/blog/daskomblog/public');
 
 if (mix.inProduction()) {
     mix.version();
