@@ -24768,6 +24768,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  background: white;
 }
 
 @media (min-width: 640px){

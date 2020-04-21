@@ -23,3 +23,18 @@ Route::get('/login', function () {
     return Inertia::render('Login', [
     ]); 
 });
+
+Route::get('/asisten', function () {
+    return Inertia::render('Asisten', [
+    ]); 
+});
+
+Route::get('/artikel/baru', function () {
+    return Inertia::render('NewArticle', [
+    ]); 
+});
+
+Route::get('/artikel/{slug}', function () {
+    return Inertia::render('Article', [
+    ]); 
+});
