@@ -40,7 +40,7 @@
                     <div v-for="(article) in articles" v-bind:key="article.id" class="animation-enable w-full h-120">
                         <div class="w-full h-full px-6 mt-2">
                             <div class=" flex flex-row">
-                                <img src="../../../public/images/test1.png" alt="" class=" w-1/2 h-1/2">
+                                <img src="/images/test1.png" alt="" class=" w-1/2 h-1/2">
                                 <div class="flex-col my-auto">
                                     <div>
                                         {{ article.title }}
