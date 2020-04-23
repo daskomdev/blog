@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return Inertia::render('Login', [
     ]); 
-});
+})->middleware('guest');
 
 Route::get('/asisten', function () {
     return Inertia::render('Asisten', [
@@ -38,3 +38,5 @@ Route::get('/artikel/{slug}', function () {
     return Inertia::render('Article', [
     ]); 
 });
+
+Route::post('/login', 'Auth\LoginController@login')->name('login');

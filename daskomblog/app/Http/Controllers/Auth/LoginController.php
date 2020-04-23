@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
+use Auth;
+use Route;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -37,4 +40,31 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function username()
+    {
+        return 'code';
+    }
+
+    public function login(Request $request){
+
+		// Validate the form data
+		$this->validate($request, [
+			'code'      => 'required|size:3|string',
+			'password'  => 'required|min:6|string',
+		]);
+		
+		// Attempt to log the user in
+        if (Auth::guard('web')
+            ->attempt(['code' => $request->code, 'password' => $request->password], false)) 
+			return '{"message": "success"}';
+
+        return '{"message": "Login Failed"}';
+	}
+	
+	public function logout(){
+
+		Auth::guard('web')->logout();
+		return redirect('/login');
+	}
 }
