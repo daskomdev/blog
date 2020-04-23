@@ -2132,6 +2132,185 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Login.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Login.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      formLogin: {
+        code: '',
+        password: ''
+      }
+    };
+  },
+  methods: {
+    login: function login() {
+      var globe = this;
+      this.$axios.post('/login', this.formLogin).then(function (response) {
+        if (response.data.message === "Login Failed") {
+          console.log("login failed");
+        } else {
+          console.log("login succeed");
+        }
+      })["catch"](function (error) {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          if (error.response.data.errors != null) {
+            if (error.response.data.errors.kode != null) console.log(error.response.data.errors.kode[0]);
+            if (error.response.data.errors.password != null) console.log(error.response.data.errors.password[0]);
+          }
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/NewArticle.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/NewArticle.vue?vue&type=script&lang=js& ***!
@@ -6041,10 +6220,168 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: " relative w-full h-auto flex flex-row" }, [
-        _vm._m(0),
+        _c("div", { staticClass: "flex-1 pl-16 pr-4" }, [
+          _c("div", { staticClass: " relative flex" }, [
+            _c("div", { staticClass: "w-full max-w-xs mx-auto" }, [
+              _c(
+                "form",
+                {
+                  staticClass: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4",
+                  on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.login($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "mb-4" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block text-gray-700 text-sm font-bold mb-2",
+                        attrs: { for: "username" }
+                      },
+                      [
+                        _vm._v(
+                          "\r\n                                    Kode Asisten\r\n                                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formLogin.code,
+                          expression: "formLogin.code"
+                        }
+                      ],
+                      staticClass:
+                        "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                      attrs: {
+                        id: "username",
+                        type: "text",
+                        placeholder: "Username"
+                      },
+                      domProps: { value: _vm.formLogin.code },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formLogin, "code", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mb-6" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block text-gray-700 text-sm font-bold mb-2",
+                        attrs: { for: "password" }
+                      },
+                      [
+                        _vm._v(
+                          "\r\n                                    Password\r\n                                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formLogin.password,
+                          expression: "formLogin.password"
+                        }
+                      ],
+                      staticClass:
+                        "shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline",
+                      attrs: {
+                        id: "password",
+                        type: "password",
+                        placeholder: "******************"
+                      },
+                      domProps: { value: _vm.formLogin.password },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.formLogin,
+                            "password",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                      _vm._v("Please choose a password.")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex items-center justify-between" },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+                          attrs: { type: "button" },
+                          on: { click: _vm.login }
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                                    Sign In\r\n                                "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800",
+                          attrs: { href: "#" }
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                                    Forgot Password?\r\n                                "
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-center text-gray-500 text-xs" }, [
+                _vm._v(
+                  "\r\n                            ©2020 Acme Corp. All rights reserved.\r\n                        "
+                )
+              ])
+            ])
+          ])
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-col" }, [
-          _vm._m(1),
+          _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: " mx-auto mt-6" }, [
             _c(
@@ -6161,116 +6498,10 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(2)
+    _vm._m(1)
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex-1 pl-16 pr-4" }, [
-      _c("div", { staticClass: " relative flex" }, [
-        _c("div", { staticClass: "w-full max-w-xs mx-auto" }, [
-          _c(
-            "form",
-            { staticClass: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" },
-            [
-              _c("div", { staticClass: "mb-4" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "block text-gray-700 text-sm font-bold mb-2",
-                    attrs: { for: "username" }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                                    Username\r\n                                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass:
-                    "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-                  attrs: {
-                    id: "username",
-                    type: "text",
-                    placeholder: "Username"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "mb-6" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "block text-gray-700 text-sm font-bold mb-2",
-                    attrs: { for: "password" }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                                    Password\r\n                                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass:
-                    "shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline",
-                  attrs: {
-                    id: "password",
-                    type: "password",
-                    placeholder: "******************"
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-red-500 text-xs italic" }, [
-                  _vm._v("Please choose a password.")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center justify-between" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
-                    attrs: { type: "button" }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                                    Sign In\r\n                                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800",
-                    attrs: { href: "#" }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                                    Forgot Password?\r\n                                "
-                    )
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-center text-gray-500 text-xs" }, [
-            _vm._v(
-              "\r\n                            ©2020 Acme Corp. All rights reserved.\r\n                        "
-            )
-          ])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -15601,15 +15832,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Login_vue_vue_type_template_id_0004d9e0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Login.vue?vue&type=template&id=0004d9e0& */ "./resources/js/Pages/Login.vue?vue&type=template&id=0004d9e0&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Login.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Login.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Login_vue_vue_type_template_id_0004d9e0___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Login_vue_vue_type_template_id_0004d9e0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -15623,6 +15856,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/Pages/Login.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Login.vue?vue&type=script&lang=js&":
+/*!***************************************************************!*\
+  !*** ./resources/js/Pages/Login.vue?vue&type=script&lang=js& ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Login.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Login.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -15725,20 +15972,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
-/* harmony import */ var froala_editor_js_plugins_pkgd_min_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! froala-editor/js/plugins.pkgd.min.js */ "./node_modules/froala-editor/js/plugins.pkgd.min.js");
-/* harmony import */ var froala_editor_js_plugins_pkgd_min_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_plugins_pkgd_min_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var froala_editor_js_third_party_embedly_min__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! froala-editor/js/third_party/embedly.min */ "./node_modules/froala-editor/js/third_party/embedly.min.js");
-/* harmony import */ var froala_editor_js_third_party_embedly_min__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_third_party_embedly_min__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var froala_editor_js_third_party_font_awesome_min__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! froala-editor/js/third_party/font_awesome.min */ "./node_modules/froala-editor/js/third_party/font_awesome.min.js");
-/* harmony import */ var froala_editor_js_third_party_font_awesome_min__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_third_party_font_awesome_min__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var froala_editor_js_third_party_spell_checker_min__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! froala-editor/js/third_party/spell_checker.min */ "./node_modules/froala-editor/js/third_party/spell_checker.min.js");
-/* harmony import */ var froala_editor_js_third_party_spell_checker_min__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_third_party_spell_checker_min__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var froala_editor_js_third_party_image_tui_min__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! froala-editor/js/third_party/image_tui.min */ "./node_modules/froala-editor/js/third_party/image_tui.min.js");
-/* harmony import */ var froala_editor_js_third_party_image_tui_min__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_third_party_image_tui_min__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! froala-editor/css/froala_editor.pkgd.min.css */ "./node_modules/froala-editor/css/froala_editor.pkgd.min.css");
-/* harmony import */ var froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-froala-wysiwyg */ "./node_modules/vue-froala-wysiwyg/es/index.js");
-/* harmony import */ var vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-froala-wysiwyg */ "./node_modules/vue-froala-wysiwyg/es/index.js");
+/* harmony import */ var vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var froala_editor_js_plugins_pkgd_min_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! froala-editor/js/plugins.pkgd.min.js */ "./node_modules/froala-editor/js/plugins.pkgd.min.js");
+/* harmony import */ var froala_editor_js_plugins_pkgd_min_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_plugins_pkgd_min_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var froala_editor_js_third_party_embedly_min__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! froala-editor/js/third_party/embedly.min */ "./node_modules/froala-editor/js/third_party/embedly.min.js");
+/* harmony import */ var froala_editor_js_third_party_embedly_min__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_third_party_embedly_min__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var froala_editor_js_third_party_font_awesome_min__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! froala-editor/js/third_party/font_awesome.min */ "./node_modules/froala-editor/js/third_party/font_awesome.min.js");
+/* harmony import */ var froala_editor_js_third_party_font_awesome_min__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_third_party_font_awesome_min__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var froala_editor_js_third_party_spell_checker_min__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! froala-editor/js/third_party/spell_checker.min */ "./node_modules/froala-editor/js/third_party/spell_checker.min.js");
+/* harmony import */ var froala_editor_js_third_party_spell_checker_min__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_third_party_spell_checker_min__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var froala_editor_js_third_party_image_tui_min__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! froala-editor/js/third_party/image_tui.min */ "./node_modules/froala-editor/js/third_party/image_tui.min.js");
+/* harmony import */ var froala_editor_js_third_party_image_tui_min__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(froala_editor_js_third_party_image_tui_min__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! froala-editor/css/froala_editor.pkgd.min.css */ "./node_modules/froala-editor/css/froala_editor.pkgd.min.css");
+/* harmony import */ var froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -15748,9 +15997,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_8___default.a);
+
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_3___default.a);
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].config.productionTip = false;
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__["InertiaApp"]);
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.$axios = axios__WEBPACK_IMPORTED_MODULE_2___default.a;
 var app = document.getElementById('app');
 
 var files = __webpack_require__("./resources/js sync recursive \\.vue$/");
