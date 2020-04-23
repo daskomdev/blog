@@ -38,6 +38,11 @@
             <div class="flex-1 pl-16 pr-4">
                 <div class=" relative flex">
                     <div class="w-full max-w-xs mx-auto">
+
+                        <!-- TODO: 
+                        - Fix UI for login
+                        - Add logout UI -->
+
                         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @keyup.enter="login">
                             <div class="mb-4">
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -148,6 +153,11 @@ export default {
 
     methods: {
 
+        /**
+         * TODO: 
+         * 
+         * Add Error handling system (UI)
+         */
         login: function () {
             const globe = this;
             this.$axios.post('/login', this.formLogin).then(response => {
@@ -170,6 +180,19 @@ export default {
                 }
             });
         },
+
+        /**
+         * TODO: 
+         * 
+         * Add Error handling system (UI)
+         */
+        logout: function () {
+            const globe = this;
+            setTimeout(
+                function () {
+                    globe.$inertia.replace('/logout')
+                }, 1010);
+        }
     },
 }
 </script>

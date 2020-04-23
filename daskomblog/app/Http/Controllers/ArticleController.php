@@ -8,13 +8,16 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all articles regardless the assistant.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return response()->json([
+            'message' => 'success',
+            'allArticles' => Article::all(),
+        ], 200);
     }
 
     /**

@@ -39,5 +39,9 @@ Route::get('/artikel/{slug}', function () {
     ]); 
 });
 
+// Authentication Handler
 Route::post('/login', 'Auth\LoginController@login')->name('login');
-Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+// Aritcle Handler
+Route::post('/fetchArticles', 'ArticleController@index')->name('fetchArticles');

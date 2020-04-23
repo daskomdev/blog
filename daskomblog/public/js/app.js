@@ -2277,6 +2277,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2287,6 +2292,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    /**
+     * TODO: 
+     * 
+     * Add Error handling system (UI)
+     */
     login: function login() {
       var globe = this;
       this.$axios.post('/login', this.formLogin).then(function (response) {
@@ -2305,6 +2315,18 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       });
+    },
+
+    /**
+     * TODO: 
+     * 
+     * Add Error handling system (UI)
+     */
+    logout: function logout() {
+      var globe = this;
+      setTimeout(function () {
+        globe.$inertia.replace('/logout');
+      }, 1010);
     }
   }
 });
