@@ -8,7 +8,7 @@
                 <div id="logo_dsk" class=" w-1/2 h-full flex">
                     <inertia-link href="/" class="w-auto h-12 my-auto flex flex-row hover:no-underline hover:text-black">
                         <div class=" w-auto h-12 my-auto ml-2 flex flex-row bg-white rounded-full">
-                            <img src="/fonts/daskom.svg" class=" w-16" alt="LOGO">
+                            <img src="/images/daskom.svg" class=" w-16" alt="LOGO">
                             <div class=" my-auto w-24">
                                 DASKOM BLOG
                             </div>
@@ -38,22 +38,27 @@
             <div class="flex-1 pl-16 pr-4">
                 <div class=" relative flex">
                     <div class="w-full max-w-xs mx-auto">
-                        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+                        <!-- TODO: 
+                        - Fix UI for login
+                        - Add logout UI -->
+
+                        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @keyup.enter="login">
                             <div class="mb-4">
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                                    Username
+                                    Kode Asisten
                                 </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+                                <input v-model="formLogin.code" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
                             </div>
                             <div class="mb-6">
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                                     Password
                                 </label>
-                                <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
+                                <input v-model="formLogin.password" class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
                                 <p class="text-red-500 text-xs italic">Please choose a password.</p>
                             </div>
                             <div class="flex items-center justify-between">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                                <button v-on:click="login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                     Sign In
                                 </button>
                                 <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
@@ -74,7 +79,7 @@
                         <div class="border rounded-full p-2">
                             <input class=" py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:placeholder-transparent" id="username" type="text" placeholder="Search">
                             <button class=" text-white font-bold p-2 rounded-full focus:outline-none">
-                                <img src="../../../public/images/cari.png" class=" w-4 h-4" alt="Cari">
+                                <img src="/images/cari.png" class=" w-4 h-4" alt="Cari">
                             </button>
                         </div>
                     </div>
@@ -107,7 +112,7 @@
     <!-- lower navbar -->
     <div class=" relative bg-black w-full h-64 mt-64 flex flex-col w-full">
         <div class=" -mt-8 mx-auto w-auto flex flex-col">
-            <a href="#"><img src="../../../public/images/panah.png" class=" h-16" alt=""></a>
+            <a href="#"><img src="/images/panah.png" class=" h-16" alt=""></a>
             <span class=" mx-auto w-auto text-white font-quicksand font-bold">Scroll Up</span>
         </div>
         <div class=" text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto">
@@ -133,3 +138,61 @@
     </div>
 </div>
 </template>
+
+<script>
+export default {
+
+    data() {
+        return {
+            formLogin: {
+                code: '',
+                password: '',
+            },
+        };
+    },
+
+    methods: {
+
+        /**
+         * TODO: 
+         * 
+         * Add Error handling system (UI)
+         */
+        login: function () {
+            const globe = this;
+            this.$axios.post('/login', this.formLogin).then(response => {
+
+                if (response.data.message === "Login Failed") {
+                    console.log("login failed");
+                } else {
+                    console.log("login succeed");
+                }
+            }).catch(function (error) {
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    if (error.response.data.errors != null) {
+                        if (error.response.data.errors.kode != null)
+                            console.log(error.response.data.errors.kode[0]);
+                        if (error.response.data.errors.password != null)
+                            console.log(error.response.data.errors.password[0]);
+                    }
+                }
+            });
+        },
+
+        /**
+         * TODO: 
+         * 
+         * Add Error handling system (UI)
+         */
+        logout: function () {
+            const globe = this;
+            setTimeout(
+                function () {
+                    globe.$inertia.replace('/logout')
+                }, 1010);
+        }
+    },
+}
+</script>

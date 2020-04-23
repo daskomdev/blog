@@ -8,7 +8,7 @@
                 <div id="logo_dsk" class=" w-1/2 h-full flex">
                     <inertia-link href="/" class="w-auto h-12 my-auto flex flex-row hover:no-underline hover:text-black">
                         <div class=" w-auto h-12 my-auto ml-2 flex flex-row bg-white rounded-full">
-                            <img src="/fonts/daskom.svg" class=" w-16" alt="LOGO">
+                            <img src="/images/daskom.svg" class=" w-16" alt="LOGO">
                             <div class=" my-auto w-24">
                                 DASKOM BLOG
                             </div>
@@ -39,10 +39,10 @@
                 <div class=" font-quicksand">
                     <h1 class=" text-6xl">Lorem Ipsum</h1>
                     <div class=" relative w-full">
-                        <img class=" rounded-lg my-10" src="../../../public/images/test.png" alt="foto saya">
+                        <img class=" rounded-lg my-10" src="/images/test.png" alt="foto saya">
                         <div class=" w-full h-32 rounded-lg bg-black opacity-50 absolute bottom-0 left-0"></div>
                         <div class="ml-2 mb-2 absolute flex flex-row bottom-0 left-0">
-                            <img class=" rounded-full w-20 h-20" src="../../../public/images/foto.jpg" alt="foto orang">
+                            <img class=" rounded-full w-20 h-20" src="/images/foto.jpg" alt="foto orang">
                             <span class=" text-white font-quicksand font-bold text-3xl ml-4 my-auto">
                                 FAI
                             </span>
@@ -60,7 +60,7 @@
                         <div class="border rounded-full p-2">
                             <input class=" py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:placeholder-transparent" id="username" type="text" placeholder="Search">
                             <button class=" text-white font-bold p-2 rounded-full focus:outline-none">
-                                <img src="../../../public/images/cari.png" class=" w-4 h-4" alt="Cari">
+                                <img src="/images/cari.png" class=" w-4 h-4" alt="Cari">
                             </button>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
     <!-- lower navbar -->
     <div class=" relative bg-black w-full h-64 mt-64 flex flex-col w-full">
         <div class=" -mt-8 mx-auto w-auto flex flex-col">
-            <a href="#"><img src="../../../public/images/panah.png" class=" h-16" alt=""></a>
+            <a href="#"><img src="/images/panah.png" class=" h-16" alt=""></a>
             <span class=" mx-auto w-auto text-white font-quicksand font-bold">Scroll Up</span>
         </div>
         <div class=" text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto">
