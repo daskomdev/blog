@@ -5654,48 +5654,47 @@ var render = function() {
           [
             _c(
               "transition-group",
-              { attrs: { name: "article-list", tag: "div" } },
+              {
+                staticClass: "flex flex-col",
+                attrs: { name: "article-list", tag: "div" }
+              },
               _vm._l(_vm.articles, function(article) {
                 return _c(
                   "div",
                   {
                     key: article.id,
-                    staticClass: "animation-enable w-full h-120 flex"
+                    staticClass: "animation-enable w-full h-120"
                   },
                   [
-                    _c(
-                      "div",
-                      { staticClass: "w-full h-full px-6 flex-row mt-2" },
-                      [
-                        _c("div", [
-                          _c("img", {
-                            staticClass: " w-1/2 h-1/2",
-                            attrs: {
-                              src: __webpack_require__(/*! ../../../public/images/test1.png */ "./public/images/test1.png"),
-                              alt: ""
-                            }
-                          })
-                        ]),
+                    _c("div", { staticClass: "w-full h-full px-6 mt-2" }, [
+                      _c("div", { staticClass: " flex flex-row" }, [
+                        _c("img", {
+                          staticClass: " w-1/2 h-1/2",
+                          attrs: {
+                            src: __webpack_require__(/*! ../../../public/images/test1.png */ "./public/images/test1.png"),
+                            alt: ""
+                          }
+                        }),
                         _vm._v(" "),
-                        _c("div", [
-                          _c("div", { staticClass: " flex-col" }, [
+                        _c("div", { staticClass: "flex-col my-auto" }, [
+                          _c("div", [
                             _vm._v(
-                              "\r\n                                    " +
+                              "\r\n                                        " +
                                 _vm._s(article.title) +
-                                "\r\n                                "
+                                "\r\n                                    "
                             )
                           ]),
                           _vm._v(" "),
                           _c("div", [
                             _vm._v(
-                              "\r\n                                    " +
+                              "\r\n                                        " +
                                 _vm._s(article.content) +
-                                "\r\n                                "
+                                "\r\n                                    "
                             )
                           ])
                         ])
-                      ]
-                    )
+                      ])
+                    ])
                   ]
                 )
               }),
@@ -15447,7 +15446,7 @@ module.exports = "/images/foto.jpg?568bbf2c2a4949a1afa37bc7a9e3d9f6";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/panah.png?f535ee899e563f2d0ae606713210fa30";
+module.exports = "/images/panah.png?59a9ce3d7ecf87bcd3e2dc120896b5cb";
 
 /***/ }),
 
@@ -15458,7 +15457,7 @@ module.exports = "/images/panah.png?f535ee899e563f2d0ae606713210fa30";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/test.png?286e74ae7d89e1706c723ee6825e9b04";
+module.exports = "/images/test.png?cf45447cc965cb0969d0122c456791e6";
 
 /***/ }),
 
