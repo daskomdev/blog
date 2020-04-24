@@ -27,7 +27,13 @@
                         CONTACTS
                     </div>
                     <div class=" w-auto h-auto my-auto mr-10">
-                        <inertia-link href="/login" class="hover:no-underline hover:text-black">LOGIN</inertia-link>
+                        <!-- TODO: add assisstant code and photo beside login -->
+                        <inertia-link href="/login" class="hover:no-underline hover:text-black"
+                            :class="[{ 'hidden': this.currentUser!=null },
+                                    { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
+                        <inertia-link href="/logout/home" class="hover:no-underline hover:text-black"
+                            :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">LOGOUT</inertia-link>
                     </div>
                 </div>
             </div>
@@ -124,6 +130,7 @@ import VueFroala from 'vue-froala-wysiwyg';
 
 export default {
     name: 'app',
+    props: ['currentUser'],
     data() {
         return {
             config: {
@@ -135,6 +142,12 @@ export default {
             },
             model: 'Edit Your Content Here!'
         }
-    }
+    },
+    methods: {
+        logout: function () {
+            const globe = this;
+            globe.$inertia.replace('/logout/artikel/baru')
+        },
+    },
 }
 </script>

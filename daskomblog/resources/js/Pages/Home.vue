@@ -27,7 +27,13 @@
                         CONTACTS
                     </div>
                     <div class=" w-auto h-auto my-auto mr-10">
-                        <inertia-link href="/login" class="hover:no-underline hover:text-black">LOGIN</inertia-link>
+                        <!-- TODO: add assisstant code and photo beside login -->
+                        <inertia-link href="/login" class="hover:no-underline hover:text-black"
+                            :class="[{ 'hidden': this.currentUser!=null },
+                                    { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
+                        <inertia-link href="/logout/home" class="hover:no-underline hover:text-black"
+                            :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">LOGOUT</inertia-link>
                     </div>
                 </div>
             </div>
@@ -125,6 +131,7 @@
 
 <script>
 export default {
+    props: ['currentUser'],
     data() {
         return {
             articles: [{
