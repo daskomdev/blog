@@ -108,3 +108,16 @@
     </div>
 </div>
 </template>
+
+<script>
+export default {
+    props: ['currentUser'],
+    data() {},
+    methods: {
+        logout: function () {
+            const globe = this;
+            globe.$inertia.replace('/logout')
+        },
+    },
+}
+</script>

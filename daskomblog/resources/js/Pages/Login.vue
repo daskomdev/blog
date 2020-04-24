@@ -67,7 +67,7 @@
                             </div>
                         </form>
                         <p class="text-center text-gray-500 text-xs">
-                            &copy;2020 Acme Corp. All rights reserved.
+                            &copy;2020 Daskom Lab. All rights reserved.
                         </p>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
 
 <script>
 export default {
-
+props: ['currentUser'],
     data() {
         return {
             formLogin: {
@@ -161,38 +161,27 @@ export default {
         login: function () {
             const globe = this;
             this.$axios.post('/login', this.formLogin).then(response => {
-
+                console.log(response);
                 if (response.data.message === "Login Failed") {
                     console.log("login failed");
                 } else {
                     console.log("login succeed");
+                    globe.$inertia.replace('/');
                 }
             }).catch(function (error) {
+                console.log(error.response);
                 if (error.response) {
                     // The request was made and the server responded with a status code
                     // that falls out of the range of 2xx
                     if (error.response.data.errors != null) {
-                        if (error.response.data.errors.kode != null)
-                            console.log(error.response.data.errors.kode[0]);
+                        if (error.response.data.errors.code != null)
+                            console.log(error.response.data.errors.code[0]);
                         if (error.response.data.errors.password != null)
                             console.log(error.response.data.errors.password[0]);
                     }
                 }
             });
         },
-
-        /**
-         * TODO: 
-         * 
-         * Add Error handling system (UI)
-         */
-        logout: function () {
-            const globe = this;
-            setTimeout(
-                function () {
-                    globe.$inertia.replace('/logout')
-                }, 1010);
-        }
     },
 }
 </script>

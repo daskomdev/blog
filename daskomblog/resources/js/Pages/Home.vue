@@ -27,7 +27,13 @@
                         CONTACTS
                     </div>
                     <div class=" w-auto h-auto my-auto mr-10">
-                        <inertia-link href="/login" class="hover:no-underline hover:text-black">LOGIN</inertia-link>
+                        <!-- TODO: add assisstant code and photo beside login -->
+                        <inertia-link href="/login" class="hover:no-underline hover:text-black"
+                            :class="[{ 'hidden': this.currentUser!=null },
+                                    { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
+                        <inertia-link href="/logout/home" class="hover:no-underline hover:text-black"
+                            :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">LOGOUT</inertia-link>
                     </div>
                 </div>
             </div>
@@ -40,7 +46,7 @@
                     <div v-for="(article) in articles" v-bind:key="article.id" class="animation-enable w-full h-120">
                         <div class="w-full h-full px-6 mt-2">
                             <div class=" flex flex-row">
-                                <img src="../../../public/images/test1.png" alt="" class=" w-1/2 h-1/2">
+                                <img src="/images/test1.png" alt="" class=" w-1/2 h-1/2">
                                 <div class="flex-col my-auto">
                                     <div>
                                         {{ article.title }}
@@ -125,6 +131,7 @@
 
 <script>
 export default {
+    props: ['currentUser'],
     data() {
         return {
             articles: [{
