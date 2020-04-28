@@ -2107,9 +2107,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['currentUser']
+  props: ['currentUser'],
+  data: function data() {
+    return {
+      slug: window.location.pathname
+    };
+  }
 });
 
 /***/ }),
@@ -2266,7 +2270,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2586,10 +2589,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentUser'],
   data: function data() {
@@ -2646,7 +2645,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-froala-wysiwyg */ "./node_modules/vue-froala-wysiwyg/es/index.js");
 /* harmony import */ var vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_froala_wysiwyg__WEBPACK_IMPORTED_MODULE_0__);
-//
 //
 //
 //
@@ -5364,7 +5362,7 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout/home" }
+                        attrs: { href: "/logout" + _vm.slug }
                       },
                       [
                         _c("div", { staticClass: " flex flex-row" }, [
@@ -6232,7 +6230,7 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout/home" }
+                        attrs: { href: "/logout/home/null" }
                       },
                       [
                         _c("div", { staticClass: " flex flex-row" }, [
@@ -7201,7 +7199,7 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout/home" }
+                        attrs: { href: "/logout/artikel/baru" }
                       },
                       [
                         _c("div", { staticClass: " flex flex-row" }, [

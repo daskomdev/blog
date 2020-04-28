@@ -38,11 +38,7 @@
             <div class="flex-1 pl-16 pr-4">
                 <div class=" relative flex">
                     <div class="w-full max-w-xs mx-auto">
-
-                        <!-- TODO: 
-                        - Fix UI for login
-                        - Add logout UI -->
-
+                        
                         <!-- user: TST
                         pass: test123 -->
 

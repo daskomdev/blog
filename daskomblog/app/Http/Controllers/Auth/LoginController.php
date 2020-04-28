@@ -61,10 +61,11 @@ class LoginController extends Controller
 
         return '{"message": "Login Failed"}';
 	}
-	
-	public function logout($currentPage){
-
+    
+    // TODO:
+    // - fix logout issue
+	public function logout($currentPage,$page){
 		Auth::guard('web')->logout();
-        return redirect('/'.($currentPage=='home' ? '':$currentPage));
-	}
+        return redirect('/'.($currentPage=='home' ? '':$currentPage).'/'.($page=='null' ? '':$page));
+    }
 }
