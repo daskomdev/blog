@@ -38,10 +38,9 @@
             <div class="flex-1 pl-16 pr-4">
                 <div class=" relative flex">
                     <div class="w-full max-w-xs mx-auto">
-
-                        <!-- TODO: 
-                        - Fix UI for login
-                        - Add logout UI -->
+                        
+                        <!-- user: TST
+                        pass: test123 -->
 
                         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @keyup.enter="login">
                             <div class="mb-4">

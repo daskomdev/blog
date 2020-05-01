@@ -2103,8 +2103,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['currentUser']
+  props: ['currentUser'],
+  data: function data() {
+    return {
+      slug: window.location.pathname
+    };
+  }
 });
 
 /***/ }),
@@ -2118,6 +2127,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2382,6 +2401,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentUser'],
   data: function data() {
@@ -2426,7 +2449,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2750,6 +2772,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
@@ -2765,12 +2791,6 @@ __webpack_require__.r(__webpack_exports__);
       },
       model: 'Edit Your Content Here!'
     };
-  },
-  methods: {
-    logout: function logout() {
-      var globe = this;
-      globe.$inertia.replace('/logout/artikel/baru');
-    }
   }
 });
 
@@ -5342,9 +5362,34 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout/artikel/{slug}" }
+                        attrs: { href: "/logout" + _vm.slug }
                       },
-                      [_vm._v("LOGOUT")]
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("img", {
+                            staticClass: " w-10 h-10 my-auto mr-2 rounded-full",
+                            attrs: {
+                              src:
+                                _vm.currentUser == null
+                                  ? ""
+                                  : "/images/" + _vm.currentUser.code + ".jpg",
+                              alt: "foto asisten"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    " +
+                                _vm._s(
+                                  _vm.currentUser == null
+                                    ? ""
+                                    : _vm.currentUser.code
+                                ) +
+                                " | LOGOUT\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
                     )
                   ],
                   1
@@ -5753,9 +5798,51 @@ var render = function() {
                       "inertia-link",
                       {
                         staticClass: "hover:no-underline hover:text-black",
-                        attrs: { href: "/logout" }
+                        class: [
+                          { hidden: this.currentUser != null },
+                          { visible: this.currentUser == null }
+                        ],
+                        attrs: { href: "/login" }
                       },
-                      [_vm._v("LOGOUT")]
+                      [_vm._v("LOGIN")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        class: [
+                          { hidden: this.currentUser == null },
+                          { visible: this.currentUser != null }
+                        ],
+                        attrs: { href: "/logout/home" }
+                      },
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("img", {
+                            staticClass: " w-10 h-10 my-auto mr-2 rounded-full",
+                            attrs: {
+                              src:
+                                _vm.currentUser == null
+                                  ? ""
+                                  : "/images/" + _vm.currentUser.code + ".jpg",
+                              alt: "foto asisten"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    " +
+                                _vm._s(
+                                  _vm.currentUser == null
+                                    ? ""
+                                    : _vm.currentUser.code
+                                ) +
+                                " | LOGOUT\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
                     )
                   ],
                   1
@@ -6143,9 +6230,34 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout/home" }
+                        attrs: { href: "/logout/home/null" }
                       },
-                      [_vm._v("LOGOUT")]
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("img", {
+                            staticClass: " w-10 h-10 my-auto mr-2 rounded-full",
+                            attrs: {
+                              src:
+                                _vm.currentUser == null
+                                  ? ""
+                                  : "/images/" + _vm.currentUser.code + ".jpg",
+                              alt: "foto asisten"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    " +
+                                _vm._s(
+                                  _vm.currentUser == null
+                                    ? ""
+                                    : _vm.currentUser.code
+                                ) +
+                                " | LOGOUT\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
                     )
                   ],
                   1
@@ -7087,9 +7199,34 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout/home" }
+                        attrs: { href: "/logout/artikel/baru" }
                       },
-                      [_vm._v("LOGOUT")]
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("img", {
+                            staticClass: " w-10 h-10 my-auto mr-2 rounded-full",
+                            attrs: {
+                              src:
+                                _vm.currentUser == null
+                                  ? ""
+                                  : "/images/" + _vm.currentUser.code + ".jpg",
+                              alt: "foto asisten"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    " +
+                                _vm._s(
+                                  _vm.currentUser == null
+                                    ? ""
+                                    : _vm.currentUser.code
+                                ) +
+                                " | LOGOUT\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
                     )
                   ],
                   1

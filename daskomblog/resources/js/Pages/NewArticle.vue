@@ -27,13 +27,17 @@
                         CONTACTS
                     </div>
                     <div class=" w-auto h-auto my-auto mr-10">
-                        <!-- TODO: add assisstant code and photo beside login -->
-                        <inertia-link href="/login" class="hover:no-underline hover:text-black"
-                            :class="[{ 'hidden': this.currentUser!=null },
+                        <inertia-link href="/login" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser!=null },
                                     { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
-                        <inertia-link href="/logout/home" class="hover:no-underline hover:text-black"
-                            :class="[{ 'hidden': this.currentUser==null },
-                                    { 'visible' : this.currentUser!=null}]">LOGOUT</inertia-link>
+                        <inertia-link href="/logout/artikel/baru" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">
+                            <div class=" flex flex-row">
+                                <img class=" w-10 h-10 my-auto mr-2 rounded-full" :src="currentUser == null ? '':'/images/'+currentUser.code+'.jpg'" alt="foto asisten">
+                                <span class="my-auto">
+                                    {{currentUser == null ? '':currentUser.code}} | LOGOUT
+                                </span>
+                            </div>
+                        </inertia-link>
                     </div>
                 </div>
             </div>
@@ -142,12 +146,6 @@ export default {
             },
             model: 'Edit Your Content Here!'
         }
-    },
-    methods: {
-        logout: function () {
-            const globe = this;
-            globe.$inertia.replace('/logout/artikel/baru')
-        },
     },
 }
 </script>
