@@ -17,17 +17,27 @@
                 </div>
                 <div id="menu_dsb" class=" w-1/2 flex flex-row text-daskom-abu-tua">
                     <div class="flex-1"></div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                    <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         ARTICLES
-                    </div>
+                    </div> -->
                     <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
-                        ABOUT
+                        <inertia-link href="/about" class="hover:no-underline hover:text-black">ABOUT</inertia-link>
                     </div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                    <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         CONTACTS
-                    </div>
-                    <div class=" w-auto h-auto my-auto mr-10 text-black">
-                        <inertia-link href="/login" class="hover:no-underline hover:text-black">LOGIN</inertia-link>
+                    </div> -->
+                    <div class=" w-auto h-auto my-auto mr-10">
+                        <inertia-link href="/login" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser!=null },
+                                    { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
+                        <inertia-link href="/logout/home/null" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">
+                            <div class=" flex flex-row">
+                                <img class=" w-10 h-10 my-auto mr-2 rounded-full" :src="currentUser == null ? '':'/images/'+currentUser.code+'.jpg'" alt="foto asisten">
+                                <span class="my-auto">
+                                    {{currentUser == null ? '':currentUser.code}} | LOGOUT
+                                </span>
+                            </div>
+                        </inertia-link>
                     </div>
                 </div>
             </div>
@@ -83,6 +93,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- socmed bar -->
                 <div class=" mx-auto mt-6">
                     <div class=" mr-24 flex flex-row text-daskom-abu-tua w-64">
@@ -104,17 +115,34 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- most viewed articles -->
+                <div class=" mt-12">
+                    <span class="font-bebas text-xl">
+                        Most Viewed Articles
+                    </span>
+                    <transition-group name="most-viewed-articles" tag="div" class=" mt-2">
+                        <div v-for="(mv) in mostviewed" v-bind:key="mv.id" class="animation-enable w-full h-120 mt-2">
+                            <div class=" font-quicksand ml-3 hover:text-daskom-hijau hover:underline">
+                                - {{ mv.title }}
+                            </div>
+                        </div>
+                    </transition-group>
+                    <div class="mt-2 ml-3 font-bebas underline text-daskom-hijau">
+                        See more...
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- lower navbar -->
-    <div class=" relative bg-black w-full h-64 mt-64 flex flex-col w-full">
+    <div class=" relative bg-black w-full h-40 mt-24 flex flex-col w-full">
         <div class=" -mt-8 mx-auto w-auto flex flex-col">
             <a href="#"><img src="/images/panah.png" class=" h-16" alt=""></a>
             <span class=" mx-auto w-auto text-white font-quicksand font-bold">Scroll Up</span>
         </div>
-        <div class=" text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto">
+        <!-- <div class=" text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto">
             <div class=" w-auto">
                 ARTICLES
             </div>
@@ -130,8 +158,8 @@
             <div class=" w-auto">
                 CONTACTS
             </div>
-        </div>
-        <div class="text-white font-quicksand mx-auto w-auto mt-10">
+        </div> -->
+        <div class="text-white font-quicksand mx-auto w-auto mt-6 mb-6">
             Daskom Laboratory ©2020 All Rights Reserved.
         </div>
     </div>

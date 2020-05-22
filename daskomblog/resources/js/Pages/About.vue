@@ -17,19 +17,29 @@
                 </div>
                 <div id="menu_dsb" class=" w-1/2 flex flex-row text-daskom-abu-tua">
                     <div class="flex-1"></div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                    <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         ARTICLES
+                    </div> -->
+                    <div class=" w-auto h-auto my-auto mr-10">
+                        <inertia-link href="/artikel/baru" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">
+                            <div class=" flex flex-row">
+                                <span class="my-auto">
+                                    ARTIKEL BARU
+                                </span>
+                            </div>
+                        </inertia-link>
                     </div>
                     <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
-                        ABOUT
+                        <inertia-link href="/about" class="hover:no-underline hover:text-black">ABOUT</inertia-link>
                     </div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                    <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         CONTACTS
-                    </div>
+                    </div> -->
                     <div class=" w-auto h-auto my-auto mr-10">
                         <inertia-link href="/login" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser!=null },
                                     { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
-                        <inertia-link href="/logout/about" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                        <inertia-link href="/logout/home/null" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
                                     { 'visible' : this.currentUser!=null}]">
                             <div class=" flex flex-row">
                                 <img class=" w-10 h-10 my-auto mr-2 rounded-full" :src="currentUser == null ? '':'/images/'+currentUser.code+'.jpg'" alt="foto asisten">
@@ -46,9 +56,12 @@
         <!-- main page -->
         <div class=" relative w-full h-auto flex flex-row">
             <div class="flex-1 pl-16 pr-4">
-                <div class="relative flex">
+                <div class="relative flex-col">
                     <div class=" mx-auto text-6xl font-bebas">
                         About
+                    </div>
+                    <div class=" font-quicksand">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras feugiat libero at erat condimentum volutpat. Duis vitae consectetur dui, ut tristique ante. Maecenas laoreet nibh eget tempus aliquet. Duis fermentum pellentesque mattis. Suspendisse in libero a nisi porttitor vehicula. Maecenas aliquet enim ut elit ultrices, id commodo metus porta. Quisque elementum, justo et aliquet vehicula, eros lacus tincidunt quam, nec convallis quam est vitae massa. Fusce ut ante ante. Nam sit amet consequat turpis. Vestibulum non massa pulvinar diam ultrices congue ut eget massa. Duis at massa blandit, finibus tortor a, hendrerit quam. Quisque porttitor facilisis volutpat. 
                     </div>
                 </div>
             </div>
@@ -85,17 +98,34 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- most viewed articles -->
+                <div class=" mt-12">
+                    <span class="font-bebas text-xl">
+                        Most Viewed Articles
+                    </span>
+                    <transition-group name="most-viewed-articles" tag="div" class=" mt-2">
+                        <div v-for="(mv) in mostviewed" v-bind:key="mv.id" class="animation-enable w-full h-120 mt-2">
+                            <div class=" font-quicksand ml-3 hover:text-daskom-hijau hover:underline">
+                                - {{ mv.title }}
+                            </div>
+                        </div>
+                    </transition-group>
+                    <div class="mt-2 ml-3 font-bebas underline text-daskom-hijau">
+                        See more...
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- lower navbar -->
-    <div class=" relative bg-black w-full h-64 mt-64 flex flex-col w-full">
+    <div class=" relative bg-black w-full h-40 mt-48 flex flex-col w-full">
         <div class=" -mt-8 mx-auto w-auto flex flex-col">
             <a href="#"><img src="/images/panah.png" class=" h-16" alt=""></a>
             <span class=" mx-auto w-auto text-white font-quicksand font-bold">Scroll Up</span>
         </div>
-        <div class=" text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto">
+        <!-- <div class=" text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto">
             <div class=" w-auto">
                 ARTICLES
             </div>
@@ -111,8 +141,8 @@
             <div class=" w-auto">
                 CONTACTS
             </div>
-        </div>
-        <div class="text-white font-quicksand mx-auto w-auto mt-10">
+        </div> -->
+        <div class="text-white font-quicksand mx-auto w-auto mt-6">
             Daskom Laboratory ©2020 All Rights Reserved.
         </div>
     </div>

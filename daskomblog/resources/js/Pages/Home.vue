@@ -20,6 +20,16 @@
                     <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         ARTICLES
                     </div> -->
+                    <div class=" w-auto h-auto my-auto mr-10">
+                        <inertia-link href="/artikel/baru" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">
+                            <div class=" flex flex-row">
+                                <span class="my-auto">
+                                    ARTIKEL BARU
+                                </span>
+                            </div>
+                        </inertia-link>
+                    </div>
                     <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         <inertia-link href="/about" class="hover:no-underline hover:text-black">ABOUT</inertia-link>
                     </div>

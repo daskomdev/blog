@@ -2055,6 +2055,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentUser']
 });
@@ -2070,6 +2100,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2224,6 +2262,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2583,6 +2631,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentUser'],
   data: function data() {
@@ -2641,6 +2717,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
 /* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -18203,14 +18306,30 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
-                  },
+                  { staticClass: " w-auto h-auto my-auto mr-10" },
                   [
-                    _vm._v(
-                      "\r\n                        ARTICLES\r\n                    "
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        class: [
+                          { hidden: this.currentUser == null },
+                          { visible: this.currentUser != null }
+                        ],
+                        attrs: { href: "/artikel/baru" }
+                      },
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    ARTIKEL BARU\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
                     )
-                  ]
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
@@ -18219,22 +18338,16 @@ var render = function() {
                     staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
                   },
                   [
-                    _vm._v(
-                      "\r\n                        ABOUT\r\n                    "
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        attrs: { href: "/about" }
+                      },
+                      [_vm._v("ABOUT")]
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        CONTACTS\r\n                    "
-                    )
-                  ]
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
@@ -18262,7 +18375,7 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout/about" }
+                        attrs: { href: "/logout/home/null" }
                       },
                       [
                         _c("div", { staticClass: " flex flex-row" }, [
@@ -18416,7 +18529,67 @@ var render = function() {
                 ])
               ]
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: " mt-12" },
+            [
+              _c("span", { staticClass: "font-bebas text-xl" }, [
+                _vm._v(
+                  "\r\n                        Most Viewed Articles\r\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "transition-group",
+                {
+                  staticClass: " mt-2",
+                  attrs: { name: "most-viewed-articles", tag: "div" }
+                },
+                _vm._l(_vm.mostviewed, function(mv) {
+                  return _c(
+                    "div",
+                    {
+                      key: mv.id,
+                      staticClass: "animation-enable w-full h-120 mt-2"
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            " font-quicksand ml-3 hover:text-daskom-hijau hover:underline"
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                                - " +
+                              _vm._s(mv.title) +
+                              "\r\n                            "
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "mt-2 ml-3 font-bebas underline text-daskom-hijau"
+                },
+                [
+                  _vm._v(
+                    "\r\n                        See more...\r\n                    "
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ])
       ])
     ]),
@@ -18430,9 +18603,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "flex-1 pl-16 pr-4" }, [
-      _c("div", { staticClass: "relative flex" }, [
+      _c("div", { staticClass: "relative flex-col" }, [
         _c("div", { staticClass: " mx-auto text-6xl font-bebas" }, [
           _vm._v("\r\n                        About\r\n                    ")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: " font-quicksand" }, [
+          _vm._v(
+            "\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras feugiat libero at erat condimentum volutpat. Duis vitae consectetur dui, ut tristique ante. Maecenas laoreet nibh eget tempus aliquet. Duis fermentum pellentesque mattis. Suspendisse in libero a nisi porttitor vehicula. Maecenas aliquet enim ut elit ultrices, id commodo metus porta. Quisque elementum, justo et aliquet vehicula, eros lacus tincidunt quam, nec convallis quam est vitae massa. Fusce ut ante ante. Nam sit amet consequat turpis. Vestibulum non massa pulvinar diam ultrices congue ut eget massa. Duis at massa blandit, finibus tortor a, hendrerit quam. Quisque porttitor facilisis volutpat. \r\n                    "
+          )
         ])
       ])
     ])
@@ -18474,7 +18653,7 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: " relative bg-black w-full h-64 mt-64 flex flex-col w-full"
+        staticClass: " relative bg-black w-full h-40 mt-48 flex flex-col w-full"
       },
       [
         _c("div", { staticClass: " -mt-8 mx-auto w-auto flex flex-col" }, [
@@ -18496,36 +18675,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c(
           "div",
-          {
-            staticClass:
-              " text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto"
-          },
-          [
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                ARTICLES\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " mx-4" }, [
-              _vm._v("\r\n                |\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                ABOUT\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " mx-4" }, [
-              _vm._v("\r\n                |\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                CONTACTS\r\n            ")
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "text-white font-quicksand mx-auto w-auto mt-10" },
+          { staticClass: "text-white font-quicksand mx-auto w-auto mt-6" },
           [
             _vm._v(
               "\r\n            Daskom Laboratory ©2020 All Rights Reserved.\r\n        "
@@ -18616,14 +18766,30 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
-                  },
+                  { staticClass: " w-auto h-auto my-auto mr-10" },
                   [
-                    _vm._v(
-                      "\r\n                        ARTICLES\r\n                    "
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        class: [
+                          { hidden: this.currentUser == null },
+                          { visible: this.currentUser != null }
+                        ],
+                        attrs: { href: "/artikel/baru" }
+                      },
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    ARTIKEL BARU\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
                     )
-                  ]
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
@@ -18632,22 +18798,16 @@ var render = function() {
                     staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
                   },
                   [
-                    _vm._v(
-                      "\r\n                        ABOUT\r\n                    "
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        attrs: { href: "/about" }
+                      },
+                      [_vm._v("ABOUT")]
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        CONTACTS\r\n                    "
-                    )
-                  ]
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
@@ -18675,7 +18835,7 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout" + _vm.slug }
+                        attrs: { href: "/logout/home/null" }
                       },
                       [
                         _c("div", { staticClass: " flex flex-row" }, [
@@ -19068,6 +19228,34 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "flex-1" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: " w-auto h-auto my-auto mr-10" },
+                  [
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        class: [
+                          { hidden: this.currentUser == null },
+                          { visible: this.currentUser != null }
+                        ],
+                        attrs: { href: "/artikel/baru" }
+                      },
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    ARTIKEL BARU\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -19624,47 +19812,71 @@ var render = function() {
                     staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
                   },
                   [
-                    _vm._v(
-                      "\r\n                        ARTICLES\r\n                    "
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        attrs: { href: "/about" }
+                      },
+                      [_vm._v("ABOUT")]
                     )
-                  ]
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        ABOUT\r\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        CONTACTS\r\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: " w-auto h-auto my-auto mr-10 text-black" },
+                  { staticClass: " w-auto h-auto my-auto mr-10" },
                   [
                     _c(
                       "inertia-link",
                       {
                         staticClass: "hover:no-underline hover:text-black",
+                        class: [
+                          { hidden: this.currentUser != null },
+                          { visible: this.currentUser == null }
+                        ],
                         attrs: { href: "/login" }
                       },
                       [_vm._v("LOGIN")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        class: [
+                          { hidden: this.currentUser == null },
+                          { visible: this.currentUser != null }
+                        ],
+                        attrs: { href: "/logout/home/null" }
+                      },
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("img", {
+                            staticClass: " w-10 h-10 my-auto mr-2 rounded-full",
+                            attrs: {
+                              src:
+                                _vm.currentUser == null
+                                  ? ""
+                                  : "/images/" + _vm.currentUser.code + ".jpg",
+                              alt: "foto asisten"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    " +
+                                _vm._s(
+                                  _vm.currentUser == null
+                                    ? ""
+                                    : _vm.currentUser.code
+                                ) +
+                                " | LOGOUT\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
                     )
                   ],
                   1
@@ -19939,7 +20151,67 @@ var render = function() {
                 ])
               ]
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: " mt-12" },
+            [
+              _c("span", { staticClass: "font-bebas text-xl" }, [
+                _vm._v(
+                  "\r\n                        Most Viewed Articles\r\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "transition-group",
+                {
+                  staticClass: " mt-2",
+                  attrs: { name: "most-viewed-articles", tag: "div" }
+                },
+                _vm._l(_vm.mostviewed, function(mv) {
+                  return _c(
+                    "div",
+                    {
+                      key: mv.id,
+                      staticClass: "animation-enable w-full h-120 mt-2"
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            " font-quicksand ml-3 hover:text-daskom-hijau hover:underline"
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                                - " +
+                              _vm._s(mv.title) +
+                              "\r\n                            "
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "mt-2 ml-3 font-bebas underline text-daskom-hijau"
+                },
+                [
+                  _vm._v(
+                    "\r\n                        See more...\r\n                    "
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ])
       ])
     ]),
@@ -19985,7 +20257,7 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: " relative bg-black w-full h-64 mt-64 flex flex-col w-full"
+        staticClass: " relative bg-black w-full h-40 mt-24 flex flex-col w-full"
       },
       [
         _c("div", { staticClass: " -mt-8 mx-auto w-auto flex flex-col" }, [
@@ -20007,36 +20279,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c(
           "div",
-          {
-            staticClass:
-              " text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto"
-          },
-          [
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                ARTICLES\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " mx-4" }, [
-              _vm._v("\r\n                |\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                ABOUT\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " mx-4" }, [
-              _vm._v("\r\n                |\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                CONTACTS\r\n            ")
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "text-white font-quicksand mx-auto w-auto mt-10" },
+          { staticClass: "text-white font-quicksand mx-auto w-auto mt-6 mb-6" },
           [
             _vm._v(
               "\r\n            Daskom Laboratory ©2020 All Rights Reserved.\r\n        "
@@ -20127,14 +20370,30 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
-                  },
+                  { staticClass: " w-auto h-auto my-auto mr-10" },
                   [
-                    _vm._v(
-                      "\r\n                        ARTICLES\r\n                    "
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        class: [
+                          { hidden: this.currentUser == null },
+                          { visible: this.currentUser != null }
+                        ],
+                        attrs: { href: "/artikel/baru" }
+                      },
+                      [
+                        _c("div", { staticClass: " flex flex-row" }, [
+                          _c("span", { staticClass: "my-auto" }, [
+                            _vm._v(
+                              "\r\n                                    ARTIKEL BARU\r\n                                "
+                            )
+                          ])
+                        ])
+                      ]
                     )
-                  ]
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
@@ -20143,22 +20402,16 @@ var render = function() {
                     staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
                   },
                   [
-                    _vm._v(
-                      "\r\n                        ABOUT\r\n                    "
+                    _c(
+                      "inertia-link",
+                      {
+                        staticClass: "hover:no-underline hover:text-black",
+                        attrs: { href: "/about" }
+                      },
+                      [_vm._v("ABOUT")]
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: " w-auto h-auto my-auto mr-10 hover:text-black"
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        CONTACTS\r\n                    "
-                    )
-                  ]
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
@@ -20186,7 +20439,7 @@ var render = function() {
                           { hidden: this.currentUser == null },
                           { visible: this.currentUser != null }
                         ],
-                        attrs: { href: "/logout/artikel/baru" }
+                        attrs: { href: "/logout/home/null" }
                       },
                       [
                         _c("div", { staticClass: " flex flex-row" }, [
@@ -20374,7 +20627,67 @@ var render = function() {
                 ])
               ]
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: " mt-12" },
+            [
+              _c("span", { staticClass: "font-bebas text-xl" }, [
+                _vm._v(
+                  "\r\n                        Most Viewed Articles\r\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "transition-group",
+                {
+                  staticClass: " mt-2",
+                  attrs: { name: "most-viewed-articles", tag: "div" }
+                },
+                _vm._l(_vm.mostviewed, function(mv) {
+                  return _c(
+                    "div",
+                    {
+                      key: mv.id,
+                      staticClass: "animation-enable w-full h-120 mt-2"
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            " font-quicksand ml-3 hover:text-daskom-hijau hover:underline"
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                                - " +
+                              _vm._s(mv.title) +
+                              "\r\n                            "
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "mt-2 ml-3 font-bebas underline text-daskom-hijau"
+                },
+                [
+                  _vm._v(
+                    "\r\n                        See more...\r\n                    "
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ])
       ])
     ]),
@@ -20450,7 +20763,7 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: " relative bg-black w-full h-64 mt-64 flex flex-col w-full"
+        staticClass: " relative bg-black w-full h-36 mt-64 flex flex-col w-full"
       },
       [
         _c("div", { staticClass: " -mt-8 mx-auto w-auto flex flex-col" }, [
@@ -20472,36 +20785,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c(
           "div",
-          {
-            staticClass:
-              " text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto"
-          },
-          [
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                ARTICLES\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " mx-4" }, [
-              _vm._v("\r\n                |\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                ABOUT\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " mx-4" }, [
-              _vm._v("\r\n                |\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: " w-auto" }, [
-              _vm._v("\r\n                CONTACTS\r\n            ")
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "text-white font-quicksand mx-auto w-auto mt-10" },
+          { staticClass: "text-white font-quicksand mx-auto w-auto mt-6 mb-6" },
           [
             _vm._v(
               "\r\n            Daskom Laboratory ©2020 All Rights Reserved.\r\n        "

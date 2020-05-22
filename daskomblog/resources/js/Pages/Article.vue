@@ -17,21 +17,29 @@
                 </div>
                 <div id="menu_dsb" class=" w-1/2 flex flex-row text-daskom-abu-tua">
                     <div class="flex-1"></div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                    <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         ARTICLES
-                    </div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
-                        ABOUT
-                    </div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
-                        CONTACTS
-                    </div>
+                    </div> -->
                     <div class=" w-auto h-auto my-auto mr-10">
-                        <!-- TODO: 
-                        - add slug -->
+                        <inertia-link href="/artikel/baru" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">
+                            <div class=" flex flex-row">
+                                <span class="my-auto">
+                                    ARTIKEL BARU
+                                </span>
+                            </div>
+                        </inertia-link>
+                    </div>
+                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                        <inertia-link href="/about" class="hover:no-underline hover:text-black">ABOUT</inertia-link>
+                    </div>
+                    <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                        CONTACTS
+                    </div> -->
+                    <div class=" w-auto h-auto my-auto mr-10">
                         <inertia-link href="/login" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser!=null },
                                     { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
-                        <inertia-link :href="'/logout' + slug " class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                        <inertia-link href="/logout/home/null" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
                                     { 'visible' : this.currentUser!=null}]">
                             <div class=" flex flex-row">
                                 <img class=" w-10 h-10 my-auto mr-2 rounded-full" :src="currentUser == null ? '':'/images/'+currentUser.code+'.jpg'" alt="foto asisten">
