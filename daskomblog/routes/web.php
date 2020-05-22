@@ -26,9 +26,9 @@ Route::get('/login', function () {
     ]); 
 })->middleware('guest');
 
-Route::get('/asisten', function () {
+Route::get('/about', function () {
     $currentUser = Auth::guard('web')->user();
-    return Inertia::render('Asisten', [
+    return Inertia::render('About', [
         'currentUser' => $currentUser
     ]); 
 });

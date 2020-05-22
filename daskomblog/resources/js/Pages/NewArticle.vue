@@ -47,14 +47,12 @@
         <div class=" relative w-full h-auto flex flex-row">
             <div class="flex-1 pl-16 pr-32">
                 <form action="">
-                    <div class=" border w-64 rounded-lg">
-                        <input type="text" placeholder="Judul" class=" w-full">
+                    <div class=" text-xl rounded-lg w-full">
+                        <input type="text" placeholder="Title" class=" w-full">
                     </div>
-                    <div id="app" class=" mt-10">
-                        <froala id="edit" :tag="'textarea'" :config="config" v-model="model"></froala>
-                    </div>
+                    <quill-editor ref="myQuillEditor" v-model="content" :options="editorOption" @blur="onEditorBlur($event)" @focus="onEditorFocus($event)" @ready="onEditorReady($event)" />
                     <div class="mt-10">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                        <button class=" bg-daskom-abu-tua text-white font-bold py-2 px-4 border border-blue-700 rounded w-full">
                             Post
                         </button>
                     </div>
@@ -130,22 +128,23 @@
 </template>
 
 <script>
-import VueFroala from 'vue-froala-wysiwyg';
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+import {
+    quillEditor
+} from 'vue-quill-editor'
 
 export default {
-    name: 'app',
+    components: {
+        quillEditor,
+    },
     props: ['currentUser'],
     data() {
         return {
-            config: {
-                events: {
-                    initialized: function () {
-                        console.log('initialized')
-                    }
-                }
-            },
-            model: 'Edit Your Content Here!'
+
         }
     },
-}
+};
 </script>

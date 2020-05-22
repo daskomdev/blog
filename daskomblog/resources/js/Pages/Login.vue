@@ -47,22 +47,22 @@
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                                     Kode Asisten
                                 </label>
-                                <input v-model="formLogin.code" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+                                <input v-model="formLogin.code" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="TST">
                             </div>
                             <div class="mb-6">
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                                     Password
                                 </label>
                                 <input v-model="formLogin.password" class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
-                                <p class="text-red-500 text-xs italic">Please choose a password.</p>
+                                <p class="text-red-500 text-xs italic" v-if="error != ''">{{ error }}</p>
                             </div>
                             <div class="flex items-center justify-between">
                                 <button v-on:click="login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                     Sign In
                                 </button>
-                                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                                <!-- <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
                                     Forgot Password?
-                                </a>
+                                </a> -->
                             </div>
                         </form>
                         <p class="text-center text-gray-500 text-xs">
@@ -147,6 +147,7 @@ props: ['currentUser'],
                 code: '',
                 password: '',
             },
+            error: '',
         };
     },
 
@@ -160,23 +161,20 @@ props: ['currentUser'],
         login: function () {
             const globe = this;
             this.$axios.post('/login', this.formLogin).then(response => {
-                console.log(response);
                 if (response.data.message === "Login Failed") {
-                    console.log("login failed");
+                    globe.error = "Code or password is wrong";
                 } else {
-                    console.log("login succeed");
                     globe.$inertia.replace('/');
                 }
             }).catch(function (error) {
-                console.log(error.response);
                 if (error.response) {
                     // The request was made and the server responded with a status code
                     // that falls out of the range of 2xx
                     if (error.response.data.errors != null) {
                         if (error.response.data.errors.code != null)
-                            console.log(error.response.data.errors.code[0]);
+                            globe.error = error.response.data.errors.code[0];
                         if (error.response.data.errors.password != null)
-                            console.log(error.response.data.errors.password[0]);
+                            globe.error = error.response.data.errors.password[0];
                     }
                 }
             });

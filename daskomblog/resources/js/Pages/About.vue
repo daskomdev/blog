@@ -29,7 +29,7 @@
                     <div class=" w-auto h-auto my-auto mr-10">
                         <inertia-link href="/login" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser!=null },
                                     { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
-                        <inertia-link href="/logout/home" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                        <inertia-link href="/logout/about" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
                                     { 'visible' : this.currentUser!=null}]">
                             <div class=" flex flex-row">
                                 <img class=" w-10 h-10 my-auto mr-2 rounded-full" :src="currentUser == null ? '':'/images/'+currentUser.code+'.jpg'" alt="foto asisten">
@@ -48,7 +48,7 @@
             <div class="flex-1 pl-16 pr-4">
                 <div class="relative flex">
                     <div class=" mx-auto text-6xl font-bebas">
-                        Selamat datang di halaman asisten
+                        About
                     </div>
                 </div>
             </div>
@@ -122,12 +122,5 @@
 <script>
 export default {
     props: ['currentUser'],
-    data() {},
-    methods: {
-        logout: function () {
-            const globe = this;
-            globe.$inertia.replace('/logout')
-        },
-    },
 }
 </script>

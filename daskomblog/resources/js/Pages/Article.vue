@@ -52,11 +52,11 @@
                     <h1 class=" text-6xl">Lorem Ipsum</h1>
                     <div class=" relative w-full">
                         <img class=" rounded-lg my-10" src="/images/test.png" alt="foto saya">
-                        <div class=" w-full h-32 rounded-lg bg-black opacity-50 absolute bottom-0 left-0"></div>
+                        <div class=" w-full h-24 rounded-lg bg-black opacity-50 absolute bottom-0 left-0"></div>
                         <div class="ml-2 mb-2 absolute flex flex-row bottom-0 left-0">
-                            <img class=" rounded-full w-20 h-20" src="/images/foto.jpg" alt="foto orang">
-                            <span class=" text-white font-quicksand font-bold text-3xl ml-4 my-auto">
-                                FAI
+                            <img class=" rounded-full w-20 h-20" :src="'/images/'+currentUser.code+'.jpg'" alt="foto orang">
+                            <span class=" text-white font-quicksand text-3xl ml-4 my-auto">
+                                {{ currentUser.code }}
                             </span>
                         </div>
                     </div>
@@ -137,7 +137,7 @@ export default {
     props: ['currentUser'],
     data(){
         return{
-            slug : window.location.pathname
+            slug : window.location.pathname,
         }
     }
 }
