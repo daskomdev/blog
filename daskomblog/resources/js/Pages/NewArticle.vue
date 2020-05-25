@@ -17,19 +17,29 @@
                 </div>
                 <div id="menu_dsb" class=" w-1/2 flex flex-row text-daskom-abu-tua">
                     <div class="flex-1"></div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                    <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         ARTICLES
+                    </div> -->
+                    <div class=" w-auto h-auto my-auto mr-10">
+                        <inertia-link href="/artikel/baru" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                                    { 'visible' : this.currentUser!=null}]">
+                            <div class=" flex flex-row">
+                                <span class="my-auto">
+                                    ARTIKEL BARU
+                                </span>
+                            </div>
+                        </inertia-link>
                     </div>
                     <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
-                        ABOUT
+                        <inertia-link href="/about" class="hover:no-underline hover:text-black">ABOUT</inertia-link>
                     </div>
-                    <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
+                    <!-- <div class=" w-auto h-auto my-auto mr-10 hover:text-black">
                         CONTACTS
-                    </div>
+                    </div> -->
                     <div class=" w-auto h-auto my-auto mr-10">
                         <inertia-link href="/login" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser!=null },
                                     { 'visible': this.currentUser==null }]">LOGIN</inertia-link>
-                        <inertia-link href="/logout/artikel/baru" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
+                        <inertia-link href="/logout/home/null" class="hover:no-underline hover:text-black" :class="[{ 'hidden': this.currentUser==null },
                                     { 'visible' : this.currentUser!=null}]">
                             <div class=" flex flex-row">
                                 <img class=" w-10 h-10 my-auto mr-2 rounded-full" :src="currentUser == null ? '':'/images/'+currentUser.code+'.jpg'" alt="foto asisten">
@@ -47,14 +57,12 @@
         <div class=" relative w-full h-auto flex flex-row">
             <div class="flex-1 pl-16 pr-32">
                 <form action="">
-                    <div class=" border w-64 rounded-lg">
-                        <input type="text" placeholder="Judul" class=" w-full">
+                    <div class=" text-xl rounded-lg w-full">
+                        <input type="text" placeholder="Title" class=" w-full">
                     </div>
-                    <div id="app" class=" mt-10">
-                        <froala id="edit" :tag="'textarea'" :config="config" v-model="model"></froala>
-                    </div>
+                    <quill-editor ref="myQuillEditor" v-model="content" :options="editorOption" @blur="onEditorBlur($event)" @focus="onEditorFocus($event)" @ready="onEditorReady($event)" />
                     <div class="mt-10">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                        <button class=" bg-daskom-abu-tua text-white font-bold py-2 px-4 border border-blue-700 rounded w-full">
                             Post
                         </button>
                     </div>
@@ -95,17 +103,34 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- most viewed articles -->
+                <div class=" mt-12">
+                    <span class="font-bebas text-xl">
+                        Most Viewed Articles
+                    </span>
+                    <transition-group name="most-viewed-articles" tag="div" class=" mt-2">
+                        <div v-for="(mv) in mostviewed" v-bind:key="mv.id" class="animation-enable w-full h-120 mt-2">
+                            <div class=" font-quicksand ml-3 hover:text-daskom-hijau hover:underline">
+                                - {{ mv.title }}
+                            </div>
+                        </div>
+                    </transition-group>
+                    <div class="mt-2 ml-3 font-bebas underline text-daskom-hijau">
+                        See more...
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- lower navbar -->
-    <div class=" relative bg-black w-full h-64 mt-64 flex flex-col w-full">
+    <div class=" relative bg-black w-full h-36 mt-64 flex flex-col w-full">
         <div class=" -mt-8 mx-auto w-auto flex flex-col">
             <a href="#"><img src="/images/panah.png" class=" h-16" alt=""></a>
             <span class=" mx-auto w-auto text-white font-quicksand font-bold">Scroll Up</span>
         </div>
-        <div class=" text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto">
+        <!-- <div class=" text-white font-bebas flex flex-row text-xl mt-12 w-auto mx-auto h-auto">
             <div class=" w-auto">
                 ARTICLES
             </div>
@@ -121,8 +146,8 @@
             <div class=" w-auto">
                 CONTACTS
             </div>
-        </div>
-        <div class="text-white font-quicksand mx-auto w-auto mt-10">
+        </div> -->
+        <div class="text-white font-quicksand mx-auto w-auto mt-6 mb-6">
             Daskom Laboratory ©2020 All Rights Reserved.
         </div>
     </div>
@@ -130,22 +155,23 @@
 </template>
 
 <script>
-import VueFroala from 'vue-froala-wysiwyg';
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+import {
+    quillEditor
+} from 'vue-quill-editor'
 
 export default {
-    name: 'app',
+    components: {
+        quillEditor,
+    },
     props: ['currentUser'],
     data() {
         return {
-            config: {
-                events: {
-                    initialized: function () {
-                        console.log('initialized')
-                    }
-                }
-            },
-            model: 'Edit Your Content Here!'
+
         }
     },
-}
+};
 </script>
